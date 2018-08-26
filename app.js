@@ -3,11 +3,13 @@
 const apiKey = 'cea44b2109d142bc880071e8e965fd7a';
 const main = document.querySelector('main');
 const sourceSelector = document.querySelector('#sourceSelecter');
+const defaultSource= 'the-washington-post';
 
 
-window.addEventListener('load', e =>{
+window.addEventListener('load', async e =>{
     updateNews();
-    updateSources();
+    await updateSources();
+    sourceSelector.value= defaultSource;
 });
 
 async function updateSources(){
@@ -20,8 +22,8 @@ async function updateSources(){
     .join('\n');
 }
 
-async function updateNews() {
-    const res = await fetch('https://newsapi.org/v1/articles?source=the-verge&apiKey='+ apiKey );
+async function updateNews(source = defaultSource) {
+    const res = await fetch('https://newsapi.org/v1/articles?source='+ source +'&apiKey='+ apiKey );
     const json = await res.json();
 
     main.innerHTML = json.articles.map(createArticles).join('\n');
