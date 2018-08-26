@@ -10,6 +10,9 @@ window.addEventListener('load', async e =>{
     updateNews();
     await updateSources();
     sourceSelector.value= defaultSource;
+    sourceSelector.addEventListener('change', e => {
+        updateNews(e.target.value);
+    });
 });
 
 async function updateSources(){
@@ -33,15 +36,23 @@ async function updateNews(source = defaultSource) {
 function createArticles(articles){
 
     return `
-            <div class="articles">
+         
+
+
+            <div class="card" style="margin:2rem">
+                <div class="card-header">
+                   <h1> ${articles.title}</h1>
+                </div>
                 <a href="${articles.url}">
-                <h2>${articles.title}</h2>
-                <img src="${articles.urlToImage}" height="400" />
-                <p>
-                    ${articles.description}
-                </p>
+                    <img class="card-img-top" src="${articles.urlToImage}"    alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">${articles.description}</p>
+                    </div>
                 </a>
             </div>
+
+
+
             `;
 
 
