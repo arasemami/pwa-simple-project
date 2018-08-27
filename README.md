@@ -7,7 +7,7 @@ Progressive Web Apps simple project
 
 If you've ever read about service workers, you've probably come across boilerplate substantially similar to the following:
 
-`
+```
     if('serviceWorker' in navigator){
         try {
             navigator.serviceWorker.register('/sw.js');
@@ -15,4 +15,4 @@ If you've ever read about service workers, you've probably come across boilerpla
             console.log(error + " SW is failed!");
         }
     }
-`
+```
