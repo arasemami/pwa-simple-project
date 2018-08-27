@@ -19,7 +19,7 @@ window.addEventListener('load', async e =>{
             navigator.serviceWorker.register('/sw.js');
             console.log('service Worker register!');
         } catch (error) {
-            console.log(error + "sw faild.");
+            console.log(error + "SW is failed!");
         }
     }
 });
