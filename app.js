@@ -13,6 +13,15 @@ window.addEventListener('load', async e =>{
     sourceSelector.addEventListener('change', e => {
         updateNews(e.target.value);
     });
+
+    if('serviceWorker' in navigator){
+        try {
+            navigator.serviceWorker.register('/sw.js');
+            console.log('service Worker register!');
+        } catch (error) {
+            console.log(error + "sw faild.");
+        }
+    }
 });
 
 async function updateSources(){
@@ -44,7 +53,7 @@ function createArticles(articles){
                    <h1> ${articles.title}</h1>
                 </div>
                 <a href="${articles.url}">
-                    <img class="card-img-top" src="${articles.urlToImage}"    alt="Card image cap">
+                    <img class="card-img-top" src="${articles.urlToImage}" class="img-news"    alt="Card image cap">
                     <div class="card-body">
                         <p class="card-text">${articles.description}</p>
                     </div>
