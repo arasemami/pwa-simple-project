@@ -48,17 +48,22 @@ function createArticles(articles){
          
 
 
-            <div class="card" style="margin:2rem">
-                <div class="card-header">
-                   <h1> ${articles.title}</h1>
-                </div>
-                <a href="${articles.url}">
-                    <img class="card-img-top" src="${articles.urlToImage}" class="img-news"    alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">${articles.description}</p>
+          
+                <div class="card-deck">
+                    <a href="${articles.url}">
+                    <div class="card">
+                            <img class="card-img-top" src="${articles.urlToImage}" alt="Card image cap">
+                            <div class="card-body">
+                            <h5 class="card-title">${articles.title}</h5>
+                            <p class="card-text">${articles.description}</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                    </div
+                    </a>
                     </div>
-                </a>
-            </div>
+ 
+             
+             
 
 
 

@@ -1,3 +1,6 @@
+
+ 
+
 .img-news {
     width: 100%;
     height: auto;
@@ -6,4 +9,10 @@
 
 a   {
     text-decoration: none;
+}
+
+
+.newsMain{
+    background-color: red;
+    
 }
