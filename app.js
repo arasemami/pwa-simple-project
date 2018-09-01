@@ -45,27 +45,20 @@ async function updateNews(source = defaultSource) {
 function createArticles(articles){
 
     return `
-         
+     
+            <a href="${articles.url}">
 
+                <div class="card">
+                        <img class="card-img-top" src="${articles.urlToImage}"    alt="Card image cap">
 
-          
-                <div class="card-deck">
-                    <a href="${articles.url}">
-                    <div class="card">
-                            <img class="card-img-top" src="${articles.urlToImage}" alt="Card image cap">
-                            <div class="card-body">
+                        <div class="card-body">
                             <h5 class="card-title">${articles.title}</h5>
                             <p class="card-text">${articles.description}</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                    </div
-                    </a>
-                    </div>
- 
-             
-             
-
-
+                            <p class="card-text"><small class="text-muted">Last updated 2 mins ago</small></p>
+                        </div>
+                </div
+            
+            </a>
 
             `;
 
