@@ -23,13 +23,12 @@ self.addEventListener('fetch', event =>{
 
     const req = event.request;
     const url = new URL(req.url);
-    if(url.origin === location.origin){
+
+    if(url.origin === location.origin)
        event.respondWith(cacheFirst(req));
-    }
     else
-    {
         event.respondWith(networkFirst(req));
-    }
+    
 });
 
 async function cacheFirst(req) {
