@@ -47,8 +47,8 @@ function createArticles(articles){
     return `
      
             <a href="${articles.url}">
-
                 <div class="card">
+
                         <img class="card-img-top" src="${articles.urlToImage}"    alt="Card image cap">
 
                         <div class="card-body">
@@ -57,7 +57,6 @@ function createArticles(articles){
                             <p class="card-text"><small class="text-muted">Last updated 2 mins ago</small></p>
                         </div>
                 </div
-            
             </a>
 
             `;

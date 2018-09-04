@@ -19,7 +19,7 @@ self.addEventListener('install', async event => {
 
 self.addEventListener('fetch', event =>{
 
-    console.log('fetching is complate!');
+    //console.log('fetching is complate!');
 
     const req = event.request;
     const url = new URL(req.url);
